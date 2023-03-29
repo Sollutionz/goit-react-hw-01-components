@@ -1,0 +1,30 @@
+.transactionHistory{
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    table-layout: fixed;
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid darkgray;
+}
+
+.thead {
+    background-color: lightblue;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.th {
+    padding: 20px;
+    border: 1px solid darkgray;
+}
+.th:nth-child(1) {
+    width: 33.33%;
+}
+.th:nth-child(2) {
+    width: 33.33%;
+}
+.th:nth-child(3) {
+    width: 33.33%;
+}
