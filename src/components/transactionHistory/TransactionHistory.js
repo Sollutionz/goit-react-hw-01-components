@@ -1,34 +1,35 @@
 import css from './TransactionHistory.module.css';
-import transaction from './transactions.json';
-import TransactionHistoryItem from 'components/transactionHistoryItem/transactionHistoryItem';
+import PropTypes from 'prop-types';
 
 
-const TransactionHistory = () => {
-    return (
-      <table className={css.transactionHistory}>
-        <thead className={css.thead}>
-          <tr className={css.tr}>
-            <th className={css.th}>Type</th>
-            <th className={css.th}>Amount</th>
-            <th className={css.th}>Currency</th>
-          </tr>
-        </thead>
-     
-        <tbody>
-          {transaction.map(item => {
+const TransactionHistory = ({ items }) => {
+  return (
+    <table className={css.transactionHistory}>
+      <thead className={css.thead}>
+        <tr className={css.tr}>
+          <th className={css.th}>Type</th>
+          <th className={css.th}>Amount</th>
+          <th className={css.th}>Currency</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {items.map(item => {
           return (
-            <TransactionHistoryItem
-              key={item.id}
-              type={item.type}
-              amount={item.amount}
-              currency={item.currency}
-            />
+            <tr key={item.id} className={css.trr}>
+              <td className={css.td}>{item.type}</td>
+              <td className={css.td}>{item.amount}</td>
+              <td className={css.td}>{item.currency}</td>
+            </tr>
           );
         })}
-        </tbody>
-      </table>
-    );
-}
+      </tbody>
+    </table>
+  );
+};
 
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired
+};
 
 export default TransactionHistory;
