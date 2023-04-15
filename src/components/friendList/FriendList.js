@@ -1,4 +1,6 @@
 import css from './FriendList.module.css';
+import PropTypes from 'prop-types';
+
 import FriendListItem from 'components/friendListItem/FriendListItem'
 
 const FriendList = ({ friends }) => {
@@ -20,7 +22,13 @@ const FriendList = ({ friends }) => {
   );
 };
 
+export default FriendList;
 
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
+}; 
 
-
-export default FriendList
